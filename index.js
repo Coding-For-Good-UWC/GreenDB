@@ -11,10 +11,7 @@ app.use (express.json());
 app.use (express.urlencoded({ extended: true })); // replace certain invalid characters for the url // %20 -> space
 
 mongoose.set('strictQuery', false);
-mongoose.connect (MONGO_URI, () => 
-{
-    console.log ("CONNECTED TO DB"); 
-}); // connect to mongodb instance
+mongoose.connect (MONGO_URI); // connect to mongodb instance
 
 app.listen (PORT, () => // fire up express server
 {
